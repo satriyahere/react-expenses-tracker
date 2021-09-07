@@ -23,12 +23,15 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+  const addExpenseHandler = (formExpenseData) => {
+    console.log(formExpenseData);
+  };
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <ExpensesList expenses={expenses}></ExpensesList>
     </div>
   );
-}
+};
 
 export default App;
