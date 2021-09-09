@@ -34,7 +34,7 @@ const ExpenseForm = (props) => {
     event.preventDefault();
     const newExpense = {
       title,
-      amount,
+      amount: +amount,
       date: new Date(date),
     };
     props.onAddExpense(newExpense);

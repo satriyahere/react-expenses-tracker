@@ -8,18 +8,10 @@ const NewExpense = (props) => {
   const addExpenseHandler = (formExpenseData) => {
     const expenseData = { ...formExpenseData, id: nanoid() };
     props.onAddExpense(expenseData);
-    setIsShowForm(false);
-  };
-  const showFormHandler = () => {
-    setIsShowForm(true);
-  };
-  const hideFormHandler = () => {
-    setIsShowForm(false);
+    toggeFormHandler();
   };
   const addExpenseContent = isShowForm ? (
-    <ExpenseForm onCancel={hideFormHandler} onAddExpense={addExpenseHandler} />
   ) : (
-    <button onClick={showFormHandler}>Add New Expenses</button>
   );
   return <div className='new-expense'>{addExpenseContent}</div>;
 };
