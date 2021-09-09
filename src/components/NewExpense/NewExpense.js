@@ -10,8 +10,13 @@ const NewExpense = (props) => {
     props.onAddExpense(expenseData);
     toggeFormHandler();
   };
+  const toggeFormHandler = () => {
+    setIsShowForm((prevState) => prevState = !prevState);
+  }
   const addExpenseContent = isShowForm ? (
+    <ExpenseForm onCancel={toggeFormHandler} onAddExpense={addExpenseHandler} />
   ) : (
+    <button onClick={toggeFormHandler}>Add New Expenses</button>
   );
   return <div className='new-expense'>{addExpenseContent}</div>;
 };
